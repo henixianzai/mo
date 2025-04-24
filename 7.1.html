@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>个人简历表</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    table,
+    td {
+      border: 1px solid #000000;
+    }
+
+    table {
+      width: 702px;
+      border-collapse: collapse;
+      background-image: url("images/qqqq.jpg");
+      background-size: cover;
+      animation: fadeInRotate 1s ease-in-out;
+    }
+
+    td {
+      width: 90px;
+      height: 60px;
+    }
+
+    tr {
+      text-align: center;
+    }
+
+   .stuff {
+      background-color: #c6cfce;
+    }
+
+   .outer-border {
+      border: 2px solid #000;
+      padding: 10px;
+      display: inline-block;
+    }
+
+   .fa-solid {
+      transition: transform 0.3s ease;
+    }
+
+   .fa-solid:hover {
+      transform: rotate(360deg);
+    }
+
+    td {
+      transition: transform 0.3s ease;
+    }
+
+    td:hover {
+      transform: scale(1.1) rotate(5deg);
+      z-index: 1;
+    }
+
+    @keyframes fadeInRotate {
+      from {
+        opacity: 0;
+        transform: rotate(-10deg);
+      }
+      to {
+        opacity: 1;
+        transform: rotate(0deg);
+      }
+    }
+
+   .photo-container {
+      width: 200px;
+      height: 250px;
+      perspective: 1000px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+   .photo-stack {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      transform-origin: center center;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+   .photo-stack img {
+      position: absolute;
+      width: 200px;
+      height: 250px;
+      backface-visibility: hidden;
+      object-fit: cover;
+    }
+
+   .photo-stack img:nth-child(1) {
+      transform: rotateY(0deg) translateZ(150px);
+    }
+
+   .photo-stack img:nth-child(2) {
+      transform: rotateY(72deg) translateZ(150px);
+    }
+
+   .photo-stack img:nth-child(3) {
+      transform: rotateY(144deg) translateZ(150px);
+    }
+
+   .photo-stack img:nth-child(4) {
+      transform: rotateY(216deg) translateZ(150px);
+    }
+
+   .photo-stack img:nth-child(5) {
+      transform: rotateY(288deg) translateZ(150px);
+    }
+
+   .photo-container:hover .photo-stack {
+      animation: rotatePhotos 10s infinite linear;
+    }
+
+   .photo-container:not(:hover) .photo-stack img:not(:first-child) {
+      opacity: 0;
+    }
+
+    @keyframes rotatePhotos {
+      from {
+        transform: rotateY(0deg);
+      }
+      to {
+        transform: rotateY(-360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outer-border">
+    <table>
+      <caption>个人简历</caption>
+      <tr>
+        <td class="stuff"><i class="fa-solid fa-user"></i> 姓名</td>
+        <td>牟海霞</td>
+        <td class="stuff"><i class="fa-solid fa-venus"></i> 性别</td>
+        <td>女</td>
+        <td class="stuff"><i class="fa-solid fa-calendar-days"></i> 年龄</td>
+        <td>20</td>
+        <td colspan="2" rowspan="3">
+          <div class="photo-container">
+            <div class="photo-stack">
+              <img src="images/mmmm.jpg" alt="个人照片1">
+              <img src="images/wwww.jpg" alt="个人照片3">
+              <img src="images/nnnn.jpg" alt="个人照片4">
+              <img src="images/ffff.jpg" alt="个人照片5">
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="stuff"><i class="fa-solid fa-location-dot"></i> 籍贯</td>
+        <td>山东</td>
+        <td class="stuff"><i class="fa-solid fa-phone"></i> 联系电话</td>
+        <td>18805459190</td>
+        <td class="stuff"><i class="fa-solid fa-envelope"></i> 电子邮箱</td>
+        <td>1776240678@qq.com</td>
+      </tr>
+      <tr>
+        <td class="stuff"><i class="fa-solid fa-graduation-cap"></i> 学历</td>
+        <td>本科</td>
+        <td class="stuff"><i class="fa-solid fa-heart-pulse"></i> 健康状况</td>
+        <td>健康</td>
+        <td class="stuff"><i class="fa-solid fa-ring"></i> 婚姻状况</td>
+        <td>未婚</td>
+      </tr>
+      <tr>
+        <td class="stuff"><i class="fa-solid fa-briefcase"></i> 求职意向</td>
+        <td>程序员</td>
+        <td class="stuff"><i class="fa-solid fa-code"></i> 专业</td>
+        <td colspan="2">软件工程</td>
+        <td class="stuff"><i class="fa-solid fa-school"></i> 毕业院校</td>
+        <td colspan="2">烟台理工学院</td>
+      </tr>
+      <tr>
+        <td class="stuff"><i class="fa-solid fa-certificate"></i> 技能证书</td>
+        <td colspan="7">无</td>
+      </tr>
+      <tr>
+        <td class="stuff"><i class="fa-solid fa-star"></i> 个人特长与爱好</td>
+        <td colspan="7">唱歌，读书，运动</td>
+      </tr>
+      <tr>
+        <td class="stuff"><i class="fa-solid fa-project-diagram"></i> 项目经历</td>
+        <td colspan="7">无</td>
+      </tr>
+      <tr>
+        <td class="stuff"><i class="fa-solid fa-comment"></i> 自我评价</td>
+        <td colspan="7">为人处世，我秉持真诚友善原则。在课余时间，我更是积极参与各类实践活动，积累经验。
+        我喜欢阅读，大量的阅读让我具备丰富的想象力与良好的文字理解能力；热衷于运动的我，不仅锻炼了坚韧不拔的毅力，
+        还培养了出色的团队协作精神。能迅速融入团队，积极参与团队讨论，分享自己见解，助力团队解决诸多工作难题。
+        面对合作分歧，我善于换位思考，以平和方式协调各方，推动项目顺利进展。
+        在职业成长道路上，我不断追求进步。主动学习行业前沿知识，提升专业技能。我深知职场如逆水行舟，
+        未来将持续奋进，为个人与公司发展注入更多动力。</td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>    
